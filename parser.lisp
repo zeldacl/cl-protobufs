@@ -458,7 +458,8 @@
                  (maybe-skip-comments stream)))
          (oneof (make-instance 'protobuf-oneof
                   :class (proto->class-name name *protobuf-package*)
-                  :name (proto->slot-name name *protobuf-package*)
+                  ;; :name (proto->slot-name name *protobuf-package*)
+                  :name name
                   :qualified-name (make-qualified-name message name)
                   :parent message
                   :source-location (make-source-location stream loc (i+ loc (length name))))))
